@@ -31,6 +31,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", "~> 5.0" # rspec-rails is a testing framework for Rails 3+
+  gem "rubocop", "~> 1.17", require: false # Automatic Ruby code style checking tool
+  gem "rubocop-performance", "~> 1.11", require: false # A collection of RuboCop cops to check for performance optimizations in Ruby code
+  gem "rubocop-rails", "~> 2.11", require: false # Automatic Rails code style checking tool
+  gem "rubocop-rspec", "~> 2.4", require: false # Code style checking for RSpec files
 end
 
 group :development do
@@ -50,6 +55,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'factory_bot_rails', '~> 6.2' # factory_bot is a fixtures replacement with a straightforward definition syntax, support for multiple build strategies
+  gem 'shoulda-matchers', '~> 5.0' # Simple one-liner tests for common Rails functionality
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
