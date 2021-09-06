@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_09_05_200133) do
+=======
+ActiveRecord::Schema.define(version: 2021_09_05_183238) do
+>>>>>>> add3089ef244268348233c098b53d3cbdb342f38
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
@@ -24,9 +28,13 @@ ActiveRecord::Schema.define(version: 2021_09_05_200133) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "prioritize"
+<<<<<<< HEAD
     t.string "progress"
     t.index ["prioritize"], name: "index_tasks_on_prioritize"
     t.index ["progress"], name: "index_tasks_on_progress"
+=======
+    t.index ["prioritize"], name: "index_tasks_on_prioritize"
+>>>>>>> add3089ef244268348233c098b53d3cbdb342f38
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 

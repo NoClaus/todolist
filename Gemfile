@@ -61,4 +61,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+<<<<<<< HEAD
+=======
+
+>>>>>>> add3089ef244268348233c098b53d3cbdb342f38
 gem 'aasm'

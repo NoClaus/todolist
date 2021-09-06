@@ -6,6 +6,7 @@ RSpec.describe Task, type: :model do
     it { is_expected.to belong_to(:project) }
   end 
   
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_length_of(:title).is_at_least(15).is_at_most(150) }
@@ -23,6 +24,19 @@ RSpec.describe Task, type: :model do
     it { expect(task).not_to have_state(:highing).on(:priority) }
     it { expect(task).to allow_event(:high).on(:priority) }
     it { expect(task).not_to allow_event(:low).on(:priority) }
+
+  describe 'aasm states' do
+    task = Task.new
+    it { expect(task).to have_state(:lowing) }
+    it { expect(task).to transition_from(:lowing).to(:highing).on_event(:high) }
+    it { expect(task).not_to transition_from(:highing).to(:lowing).on_event(:high) }
+    it { expect(task).not_to have_state(:lowing) }
+    it { expect(task).to allow_event(:low) }
+    it { expect(task).to transition_from(:highing).to(:lowing).on_event(:low) }
+    it { expect(task).not_to have_state(:highing) }
+    it { expect(task).to allow_event(:high) }
+    it { expect(task).not_to allow_event(:low) }
+
   end
   
   describe 'aasm states for progress' do

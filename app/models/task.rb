@@ -3,11 +3,16 @@ class Task < ApplicationRecord
   
   belongs_to :project
   
+<<<<<<< HEAD
   validates :title, presence: true
   validates :title, length: { minimum: 15, maximum: 150 }
   
   
   aasm :priority, column: 'prioritize' do
+=======
+  
+  aasm column: :prioritize do
+>>>>>>> add3089ef244268348233c098b53d3cbdb342f38
     state :lowing, initial: true
     state :highing
 
@@ -20,6 +25,7 @@ class Task < ApplicationRecord
     end
   end
   
+<<<<<<< HEAD
   aasm :progress, column: 'progress' do
     state :initialized, initial: true
     state :finalized
@@ -30,4 +36,6 @@ class Task < ApplicationRecord
     
   end
   
+=======
+>>>>>>> add3089ef244268348233c098b53d3cbdb342f38
 end
